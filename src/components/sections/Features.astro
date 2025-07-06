@@ -1,0 +1,58 @@
+---
+const features = [
+  {
+    title: "Modern Technology",
+    description: "Built with the latest web technologies including Astro, TypeScript, and Tailwind CSS for optimal performance.",
+    icon: "🚀",
+  },
+  {
+    title: "Responsive Design",
+    description: "Looks great on all devices with mobile-first design principles and Apple Human Interface Guidelines.",
+    icon: "📱",
+  },
+  {
+    title: "SEO Optimized",
+    description: "Built-in SEO optimization with proper meta tags, structured data, and fast loading times.",
+    icon: "🔍",
+  },
+  {
+    title: "Developer Friendly",
+    description: "Clean code architecture with TypeScript, automatic documentation, and comprehensive testing.",
+    icon: "⚡",
+  },
+  {
+    title: "Content Management",
+    description: "Integrated CMS with a WordPress-like interface for easy content management and updates.",
+    icon: "📝",
+  },
+  {
+    title: "Deployment Ready",
+    description: "One-click deployment to Vercel with automatic builds and continuous integration.",
+    icon: "🌐",
+  },
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Everything You Need to Build Great Products
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Our template includes all the modern tools and best practices you need to build 
+        professional websites and applications quickly and efficiently.
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100">
+          <div class="text-4xl mb-4">{feature.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

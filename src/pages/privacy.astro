@@ -1,0 +1,162 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const lastUpdated = 'January 1, 2025';
+---
+
+<Layout title="Privacy Policy" description="Learn how we collect, use, and protect your personal information">
+  <Header />
+  <main class="pt-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Privacy Policy</h1>
+        <p class="text-lg text-gray-600">Last updated: {lastUpdated}</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <p class="text-xl text-gray-700 mb-8">
+          Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+        </p>
+
+        <h2>Information We Collect</h2>
+        <h3>Personal Information</h3>
+        <p>
+          We may collect personally identifiable information such as:
+        </p>
+        <ul>
+          <li>Name and contact information (email address, phone number)</li>
+          <li>Billing and payment information</li>
+          <li>Account credentials and preferences</li>
+          <li>Communications and correspondence</li>
+        </ul>
+
+        <h3>Non-Personal Information</h3>
+        <p>
+          We may collect non-personally identifiable information such as:
+        </p>
+        <ul>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>IP address and location data</li>
+          <li>Pages visited and time spent on our website</li>
+          <li>Referring website addresses</li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>
+          We use the information we collect for various purposes, including:
+        </p>
+        <ul>
+          <li>Providing and maintaining our services</li>
+          <li>Processing transactions and payments</li>
+          <li>Communicating with you about our services</li>
+          <li>Improving our website and services</li>
+          <li>Analyzing usage patterns and trends</li>
+          <li>Complying with legal obligations</li>
+        </ul>
+
+        <h2>Information Sharing and Disclosure</h2>
+        <p>
+          We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
+        </p>
+        <ul>
+          <li>With service providers who assist us in operating our website and services</li>
+          <li>When required by law or to protect our rights</li>
+          <li>In connection with a business transfer or acquisition</li>
+          <li>With your explicit consent</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>
+          We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
+        </p>
+        <ul>
+          <li>Encryption of sensitive data in transit and at rest</li>
+          <li>Regular security audits and assessments</li>
+          <li>Access controls and authentication mechanisms</li>
+          <li>Employee training on data protection practices</li>
+        </ul>
+
+        <h2>Cookies and Tracking Technologies</h2>
+        <p>
+          We use cookies and similar tracking technologies to enhance your experience on our website. You can control cookie preferences through your browser settings.
+        </p>
+
+        <h3>Types of Cookies We Use</h3>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for basic website functionality</li>
+          <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our website</li>
+          <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+          <li><strong>Marketing Cookies:</strong> Used to deliver relevant advertisements</li>
+        </ul>
+
+        <h2>Your Rights and Choices</h2>
+        <p>
+          You have the right to:
+        </p>
+        <ul>
+          <li>Access your personal information</li>
+          <li>Correct inaccurate information</li>
+          <li>Delete your personal information</li>
+          <li>Object to processing of your information</li>
+          <li>Data portability</li>
+          <li>Withdraw consent at any time</li>
+        </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>
+          Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
+        </p>
+
+        <h2>International Data Transfers</h2>
+        <p>
+          Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place to protect your data.
+        </p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+        </p>
+
+        <h2>Contact Information</h2>
+        <p>
+          If you have any questions about this Privacy Policy, please contact us at:
+        </p>
+        <ul>
+          <li>Email: privacy@crispygoat.com</li>
+          <li>Address: [Your Company Address]</li>
+          <li>Phone: [Your Phone Number]</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .prose h2 {
+    @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-semibold text-gray-900 mt-6 mb-3;
+  }
+  
+  .prose p {
+    @apply text-gray-700 mb-4 leading-relaxed;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside mb-4 text-gray-700;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+</style>

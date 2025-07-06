@@ -1,0 +1,283 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const services = [
+  {
+    title: 'Web Development',
+    description: 'Custom websites and web applications built with modern technologies like Astro, React, and TypeScript.',
+    features: [
+      'Responsive design for all devices',
+      'Fast loading and optimized performance',
+      'SEO-friendly architecture',
+      'Content management systems',
+      'E-commerce integration',
+      'Progressive Web Apps (PWA)'
+    ],
+    icon: '💻',
+    pricing: 'Starting at $5,000'
+  },
+  {
+    title: 'Mobile App Development',
+    description: 'Native and cross-platform mobile applications for iOS and Android using React Native and Flutter.',
+    features: [
+      'iOS and Android development',
+      'Cross-platform solutions',
+      'App Store optimization',
+      'Push notifications',
+      'Offline functionality',
+      'Analytics integration'
+    ],
+    icon: '📱',
+    pricing: 'Starting at $15,000'
+  },
+  {
+    title: 'E-commerce Solutions',
+    description: 'Complete online stores with payment processing, inventory management, and customer analytics.',
+    features: [
+      'Shopping cart and checkout',
+      'Payment gateway integration',
+      'Inventory management',
+      'Order tracking',
+      'Customer accounts',
+      'Analytics and reporting'
+    ],
+    icon: '🛒',
+    pricing: 'Starting at $8,000'
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'User-centered design solutions that create intuitive and engaging digital experiences.',
+    features: [
+      'User research and analysis',
+      'Wireframing and prototyping',
+      'Visual design and branding',
+      'Usability testing',
+      'Design systems',
+      'Accessibility compliance'
+    ],
+    icon: '🎨',
+    pricing: 'Starting at $3,000'
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Comprehensive digital marketing strategies to grow your online presence and drive conversions.',
+    features: [
+      'Search engine optimization (SEO)',
+      'Pay-per-click advertising (PPC)',
+      'Social media marketing',
+      'Content marketing',
+      'Email marketing',
+      'Analytics and reporting'
+    ],
+    icon: '📈',
+    pricing: 'Starting at $2,000/month'
+  },
+  {
+    title: 'Technical Consulting',
+    description: 'Expert guidance on technology strategy, architecture decisions, and digital transformation.',
+    features: [
+      'Technology stack recommendations',
+      'Architecture planning',
+      'Code reviews and audits',
+      'Performance optimization',
+      'Security assessments',
+      'Team training and mentoring'
+    ],
+    icon: '🔧',
+    pricing: 'Starting at $200/hour'
+  }
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Discovery',
+    description: 'We learn about your business, goals, and requirements through detailed discussions and research.',
+    icon: '🔍'
+  },
+  {
+    step: '02',
+    title: 'Planning',
+    description: 'We create a comprehensive project plan with timelines, milestones, and resource allocation.',
+    icon: '📋'
+  },
+  {
+    step: '03',
+    title: 'Design',
+    description: 'Our team creates wireframes, mockups, and prototypes to visualize the final product.',
+    icon: '🎨'
+  },
+  {
+    step: '04',
+    title: 'Development',
+    description: 'We build your solution using modern technologies and best practices for quality and performance.',
+    icon: '⚡'
+  },
+  {
+    step: '05',
+    title: 'Testing',
+    description: 'Rigorous testing ensures your product works flawlessly across all devices and browsers.',
+    icon: '🧪'
+  },
+  {
+    step: '06',
+    title: 'Launch & Support',
+    description: 'We deploy your solution and provide ongoing support to ensure continued success.',
+    icon: '🚀'
+  }
+];
+---
+
+<Layout title="Our Services" description="Comprehensive web development and digital solutions for your business">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
+          <p class="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto">
+            Comprehensive digital solutions to help your business thrive in the modern world. 
+            From web development to digital marketing, we've got you covered.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We offer a full range of digital services to help businesses of all sizes 
+            establish and grow their online presence.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <div class="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-200">
+              <div class="text-4xl mb-4">{service.icon}</div>
+              <h3 class="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
+              <p class="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+              
+              <ul class="space-y-2 mb-6">
+                {service.features.map((feature) => (
+                  <li class="flex items-center text-gray-700">
+                    <svg class="h-4 w-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              
+              <div class="border-t border-gray-200 pt-4">
+                <p class="text-primary-600 font-semibold">{service.pricing}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We follow a proven methodology to ensure every project is delivered on time, 
+            within budget, and exceeds expectations.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {process.map((step, index) => (
+            <div class="relative">
+              {index < process.length - 1 && (
+                <div class="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200 transform translate-x-4 z-0"></div>
+              )}
+              <div class="relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200 z-10">
+                <div class="flex items-center mb-4">
+                  <div class="bg-primary-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mr-4">
+                    {step.step}
+                  </div>
+                  <div class="text-3xl">{step.icon}</div>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
+                <p class="text-gray-600 leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies We Use</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We stay up-to-date with the latest technologies and frameworks to deliver 
+            cutting-edge solutions that perform at their best.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+          {[
+            { name: 'React', logo: '⚛️' },
+            { name: 'TypeScript', logo: '📘' },
+            { name: 'Astro', logo: '🚀' },
+            { name: 'Next.js', logo: '▲' },
+            { name: 'Tailwind CSS', logo: '🎨' },
+            { name: 'Node.js', logo: '💚' },
+            { name: 'PostgreSQL', logo: '🐘' },
+            { name: 'AWS', logo: '☁️' },
+            { name: 'Vercel', logo: '🔺' },
+            { name: 'Figma', logo: '🎯' },
+            { name: 'Docker', logo: '🐳' },
+            { name: 'Git', logo: '📝' }
+          ].map((tech) => (
+            <div class="text-center group">
+              <div class="text-4xl mb-2 group-hover:scale-110 transition-transform duration-200">
+                {tech.logo}
+              </div>
+              <p class="text-sm font-medium text-gray-700">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          Let's discuss your project and how we can help you achieve your business goals 
+          with our comprehensive digital solutions.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="bg-accent-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            Start Your Project
+          </a>
+          <a
+            href="/about"
+            class="bg-white/10 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-all duration-200 backdrop-blur-sm border border-white/20"
+          >
+            Learn More About Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

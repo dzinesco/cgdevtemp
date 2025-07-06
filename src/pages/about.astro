@@ -1,0 +1,192 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/layout/Header.astro';
+import Footer from '@/components/layout/Footer.astro';
+
+const team = [
+  {
+    name: 'John Smith',
+    role: 'CEO & Founder',
+    image: '/team/john.jpg',
+    bio: 'With over 10 years of experience in web development, John leads our team with passion for creating exceptional digital experiences.',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#'
+    }
+  },
+  {
+    name: 'Sarah Johnson',
+    role: 'Lead Developer',
+    image: '/team/sarah.jpg',
+    bio: 'Sarah is our technical lead, specializing in modern web technologies and ensuring our projects meet the highest standards.',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#'
+    }
+  },
+  {
+    name: 'Mike Chen',
+    role: 'Design Director',
+    image: '/team/mike.jpg',
+    bio: 'Mike brings creativity and user-centered design thinking to every project, creating beautiful and functional interfaces.',
+    social: {
+      linkedin: '#',
+      twitter: '#',
+      github: '#'
+    }
+  }
+];
+
+const values = [
+  {
+    title: 'Innovation',
+    description: 'We embrace new technologies and creative solutions to solve complex problems.',
+    icon: '💡'
+  },
+  {
+    title: 'Quality',
+    description: 'We deliver high-quality work that exceeds expectations and stands the test of time.',
+    icon: '⭐'
+  },
+  {
+    title: 'Collaboration',
+    description: 'We work closely with our clients to understand their needs and achieve their goals.',
+    icon: '🤝'
+  },
+  {
+    title: 'Transparency',
+    description: 'We believe in open communication and honest relationships with our clients.',
+    icon: '🔍'
+  }
+];
+---
+
+<Layout title="About Us" description="Learn more about our team, mission, and values">
+  <Header />
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">About CrispyGoat</h1>
+          <p class="text-xl md:text-2xl text-primary-100 max-w-3xl mx-auto">
+            We're a team of passionate developers and designers dedicated to creating 
+            exceptional digital experiences that drive business growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            Founded in 2020, CrispyGoat emerged from a simple belief: that great websites 
+            and applications should be accessible to businesses of all sizes. We started 
+            with a mission to democratize modern web development by creating tools and 
+            templates that empower developers to build better, faster.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            Today, we're proud to serve hundreds of clients worldwide, from startups to 
+            Fortune 500 companies. Our team has grown, but our commitment to quality, 
+            innovation, and client success remains unchanged.
+          </p>
+          <p class="text-lg text-gray-600">
+            We believe that technology should solve real problems and create meaningful 
+            value. That's why we focus on building solutions that are not just technically 
+            excellent, but also practical and user-friendly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            These core values guide everything we do and help us deliver exceptional 
+            results for our clients.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value) => (
+            <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div class="text-4xl mb-4">{value.icon}</div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our diverse team brings together expertise from various fields to deliver 
+            comprehensive solutions for your digital needs.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {team.map((member) => (
+            <div class="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-200">
+              <div class="w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <span class="text-2xl font-bold text-gray-600">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+              <p class="text-primary-600 font-medium mb-3">{member.role}</p>
+              <p class="text-gray-600 mb-4">{member.bio}</p>
+              <div class="flex justify-center space-x-4">
+                <a href={member.social.linkedin} class="text-gray-400 hover:text-primary-600 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href={member.social.twitter} class="text-gray-400 hover:text-primary-600 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                </a>
+                <a href={member.social.github} class="text-gray-400 hover:text-primary-600 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-primary-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Work Together?</h2>
+        <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          We'd love to hear about your project and explore how we can help you achieve your goals.
+        </p>
+        <a
+          href="/contact"
+          class="bg-accent-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
